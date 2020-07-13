@@ -15,5 +15,5 @@ struct Card: Codable {
 }
 
 struct Deck: Codable {
-    
+    let cards: [Card]
 }

@@ -67,10 +67,26 @@
 				E132C64524B53A6500CC4B7E /* Assets.xcassets */,
 				E132C64724B53A6500CC4B7E /* LaunchScreen.storyboard */,
 				E132C64A24B53A6500CC4B7E /* Info.plist */,
-				E132C65024B53B4900CC4B7E /* Card.swift */,
-				E132C65224B53BA000CC4B7E /* CardController.swift */,
+				E1F14EB124BBF70100639414 /* Model */,
+				E1F14EB224BBF70900639414 /* Model Controller  */,
 			);
 			path = cardGarme;
+			sourceTree = "<group>";
+		};
+		E1F14EB124BBF70100639414 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E132C65024B53B4900CC4B7E /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1F14EB224BBF70900639414 /* Model Controller  */ = {
+			isa = PBXGroup;
+			children = (
+				E132C65224B53BA000CC4B7E /* CardController.swift */,
+			);
+			path = "Model Controller ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

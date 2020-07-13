@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         cardController.draw(numberOfCards: 2) { (cards) in
+            print("We got \(cards?.count)!")
         }
     }
 

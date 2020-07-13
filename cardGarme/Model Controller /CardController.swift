@@ -14,7 +14,7 @@ class CardController {
 
     func draw(numberOfCards: Int, completion: @escaping ([Card]?) -> Void) {
 
-
+        // Set Up the URL
         let newDeckURL = baseURL.appendingPathComponent("new")
         let drawURL = newDeckURL.appendingPathComponent("draw")
 
@@ -26,6 +26,7 @@ class CardController {
 
         guard let requestURL = urlComponents?.url else { return }
 
+        // Create the data task 
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
 
             // Get the data and truen it into an array of Cards.
@@ -45,9 +46,13 @@ class CardController {
             let jsonDecoder = JSONDecoder()
 
             do {
-                let cards = try jsonDecoder.decode([Card].self, from: data)
+                let deck = try jsonDecoder.decode(Deck.self, from: data)
+                completion(deck.cards)
+                NSLog("Successfully \(deck.cards.count)")
             } catch {
                 NSLog("Unable to decode data into type [Card]: \(error)")
+                completion(nil)
+                return
             }
         } .resume() // Starts the data task. without this, the data task would never go to the API.
 
